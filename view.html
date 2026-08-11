@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV Viewer — Archie Cook</title>
+  <link rel="icon" type="image/png" href="Assets/Logos/Logo%20V1.png">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #12100d;
+      font-family: 'Instrument Sans', system-ui, "Segoe UI", Roboto, sans-serif;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1rem;
+      background: #171411;
+      color: #ede8e0;
+      border-bottom: 1px solid #332b22;
+    }
+    .topbar a {
+      color: #ede8e0;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border: 1px solid #4a4034;
+      border-radius: 3px;
+      font-size: 0.9rem;
+      transition: border-color 0.18s, color 0.18s;
+    }
+    .topbar a:hover { border-color: #e2a33d; color: #f2bb62; }
+    .topbar .title { font-weight: 600; font-size: 1rem; }
+    .viewer-wrap { height: calc(100vh - 61px); width: 100%; }
+    .viewer, .mobile-viewer { width: 100%; height: 100%; border: 0; display: block; }
+    .mobile-viewer { display: none; }
+    @media (max-width: 768px) {
+      .viewer { display: none; }
+      .mobile-viewer { display: block; }
+      .topbar .title { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <a href="cv.html">&larr; Back to CV page</a>
+    <span class="title">Archie Cook &mdash; Curriculum Vitae</span>
+    <a href="Assets/CV/Archie_Cook_CV_OnePage.pdf" download>Download</a>
+  </div>
+
+  <div class="viewer-wrap">
+    <iframe class="viewer" src="Assets/CV/Archie_Cook_CV_OnePage.pdf" title="Archie Cook CV"></iframe>
+    <iframe class="mobile-viewer" src="Assets/CV/Archie_Cook_CV_OnePage.pdf" title="Archie Cook CV"></iframe>
+  </div>
+
+  <script src="site.js" defer></script>
+
+</body>
+</html>

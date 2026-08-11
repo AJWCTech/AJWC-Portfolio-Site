@@ -1,0 +1,19 @@
+# Security contact information for ajwctechconsulting.com
+# Format: RFC 9116 - https://www.rfc-editor.org/rfc/rfc9116
+
+Contact: mailto:archiecook7878@gmail.com
+Expires: 2027-07-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://ajwctechconsulting.com/.well-known/security.txt
+
+# If you have found a security issue with this site, please email the
+# address above with the details and how to reproduce it. This is a
+# personal portfolio run by one person, so please allow a few days for
+# a reply.
+#
+# There is no bug bounty and no payment offered. Findings are welcome
+# anyway, and I am happy to credit you if you would like that.
+#
+# Please do not run automated scanners that generate significant traffic,
+# do not attempt denial of service, and do not access or modify data that
+# is not yours. Testing that stays within those limits is fine by me.

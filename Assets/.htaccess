@@ -1,0 +1,34 @@
+# ===================================================================
+# Assets/ - defence in depth.
+#
+# Nothing in this folder should ever be executed. It holds coursework
+# documents, images, videos and archives. If a script file ever ends up
+# here (uploaded, extracted from a zip, or lurking inside old coursework)
+# this stops the server running it and makes it a plain download instead.
+# ===================================================================
+
+# Turn off any server-side handler for scripting languages
+<IfModule mod_php.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php7.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php8.c>
+    php_flag engine off
+</IfModule>
+
+RemoveHandler .php .phtml .php3 .php4 .php5 .php7 .php8 .phps .cgi .pl .py .jsp .asp .aspx .sh
+RemoveType .php .phtml .php3 .php4 .php5 .php7 .php8 .phps .cgi .pl .py .jsp .asp .aspx .sh
+
+# Force anything script-shaped to be served as plain text rather than run
+<FilesMatch "\.(php|phtml|php[3-8]|phps|cgi|pl|py|jsp|asp|aspx|sh)$">
+    ForceType text/plain
+    <IfModule mod_headers.c>
+        Header set Content-Disposition "attachment"
+        Header set X-Content-Type-Options "nosniff"
+    </IfModule>
+</FilesMatch>
+
+# No directory listings in here either
+Options -Indexes -ExecCGI

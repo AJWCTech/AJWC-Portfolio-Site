@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# The coursework archive holds documents, screenshots and videos that are
+# meant to be read in the context of their module page, not surfaced as
+# loose search results. The module pages themselves stay indexable.
+Disallow: /Assets/Cyber%20Sec%20Uni%20Work/
+Disallow: /Assets/Cyber Sec Uni Work/
+
+# CV viewer is a wrapper around the PDF; index the CV page instead.
+Disallow: /view.html
+
+Sitemap: https://ajwctechconsulting.com/sitemap.xml

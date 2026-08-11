@@ -1,0 +1,16 @@
+# Coursework archive is NOT tracked here - it is ~966 MB (two video files
+# alone are 412 MB and 226 MB, both over GitHub's 100 MB per-file hard
+# limit). It is deployed straight to the web host instead.
+Assets/Cyber Sec Uni Work/
+
+# Build/agent scratch
+.superpowers/
+.claude/
+.agents/
+
+# OS / editor noise
+Thumbs.db
+desktop.ini
+.DS_Store
+*.swp
+*~

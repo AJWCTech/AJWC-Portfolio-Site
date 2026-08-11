@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Databases | Archie Cook</title>
+  <link rel="stylesheet" href="../../../../style.css" />
+  <!--  Icon with logo -->
+  <link rel="icon" type="image/png" href="../../../../Assets/Logos/Logo%20V1.png">
+</head>
+
+<body>
+
+<!-- HEADER / NAVBAR -->
+<header>
+  <nav class="navbar" aria-label="Main navigation">
+    <a href="../../../../index.html" class="brand"><span class="brand-mark" aria-hidden="true"></span>Archie Cook</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="../../../../index.html">Home</a></li>
+      <li><a href="../../../../Projects.html">Projects</a></li>
+      <li><a href="../../../../university-projects.html" class="active">University Work</a></li>
+      <li><a href="../../../../Contact.html">Contact</a></li>
+      <li><a href="../../../../cv.html" class="nav-cta">CV</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HERO SECTION -->
+<section id="hero">
+  <div class="hero-content fade-in">
+    <h2>Databases</h2>
+    <p>
+      Design, implementation, and querying of relational databases applied to a real-world UK Elections dataset.
+      This module covers ERD modelling, SQL development, and a full-stack Flask web application for data visualisation and electoral calculations.
+    </p>
+  </div>
+</section>
+
+<!-- EXECUTIVE SUMMARY -->
+<section class="fade-in">
+  <h2>Executive Summary</h2>
+  <p>
+    This module focused on the full lifecycle of database development — from conceptual entity-relationship design through to 
+    a deployed web application. Using a UK Elections dataset, an ERD was constructed and annotated, SQL dumps were engineered 
+    to populate a relational database, and a Python Flask application was built to expose electoral data and calculations 
+    through a web interface. Key deliverables include annotated ERD diagrams, SQL implementation files, a Flask web app 
+    with templating, and a full academic report documenting the process.
+  </p>
+</section>
+
+<!-- KEY HIGHLIGHTS -->
+<section class="fade-in">
+  <h2>Key Highlights</h2>
+  <div class="grid-boxes">
+    <div class="box warm-bg">
+      <h3>Grade</h3>
+      <p>2:1 / Merit </p>
+    </div>
+    <div class="box warm-bg-light">
+      <h3>Technologies</h3>
+      <p>Python, Flask, SQL, SQLite/MySQL, HTML Templates</p>
+    </div>
+    <div class="box warm-bg-dark">
+      <h3>Focus Area</h3>
+      <p>Database Design, ERD Modelling, Web Application Development</p>
+    </div>
+  </div>
+</section>
+
+<!-- WORD DOCUMENT -->
+<section class="fade-in">
+  <h2>Academic Report (Word)</h2>
+  <div class="box warm-bg-light" style="padding:30px; text-align:center;">
+    <p>Full academic documentation covering database design rationale, ERD construction, SQL implementation, Flask app architecture, and evaluation.</p>
+    <a href="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/UK Elec Web Application.docx"
+       download="UK Elec Web Application.docx"
+       class="cta-button" style="margin-top:20px;">
+      Download Academic Report (Word) →
+    </a>
+  </div>
+</section>
+
+<!-- ERD SECTION -->
+<section class="fade-in">
+  <h2>Entity Relationship Diagram (ERD)</h2>
+  <p>The ERD was designed to model the UK Elections dataset, defining entities, attributes, and relationships across the relational schema.</p>
+
+  <div class="grid-boxes" style="margin-top:20px;">
+
+    <div class="box warm-bg-light" style="padding:30px; text-align:center;">
+      <h3>ERD Diagram (PDF)</h3>
+      <p>Combined ERD diagram exported as PDF, showing the full relational structure.</p>
+      <a href="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/ERD/combined.pdf"
+         download="ERD-combined.pdf"
+         class="cta-button" style="margin-top:15px;">
+        Download ERD PDF →
+      </a>
+    </div>
+
+    <div class="box warm-bg" style="padding:30px; text-align:center;">
+      <h3>Diagram Annotations (Word)</h3>
+      <p>Detailed written annotations explaining design decisions for each entity and relationship in the ERD.</p>
+      <a href="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/ERD/Diagram Annotations.docx"
+         download="Diagram Annotations.docx"
+         class="cta-button" style="margin-top:15px;">
+        Download Annotations (Word) →
+      </a>
+    </div>
+
+  </div>
+
+  <!-- ERD PDF Inline Preview -->
+  <div style="margin-top:30px;">
+    <h3>ERD Preview</h3>
+    <iframe src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/ERD/combined.pdf"
+            width="100%" height="700px" style="border-radius:10px; border:none;"></iframe>
+    <div style="text-align:center; margin-top:15px;">
+      <a href="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/ERD/combined.pdf"
+         download="ERD-combined.pdf"
+         class="cta-button">Download ERD PDF →</a>
+    </div>
+  </div>
+</section>
+
+<!-- SQL & CALCULATIONS -->
+<section class="fade-in">
+  <h2>SQL &amp; Calculation Snippets</h2>
+  <p>Key SQL queries and electoral calculation logic developed as part of the database implementation and analysis phase.</p>
+  <div class="box warm-bg-dark" style="padding:30px; text-align:center;">
+    <p>Download the key SQL and calculation snippet files used throughout the module.</p>
+    <a href="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/SQL-Snippets.zip"
+       download="SQL-Snippets.zip"
+       class="cta-button" style="margin-top:15px;">
+      Download SQL Snippets (ZIP) →
+    </a>
+  </div>
+</section>
+
+<!-- FLASK WEB APPLICATION -->
+<section class="fade-in">
+  <h2>UK Elections Flask Web Application</h2>
+  <p>
+    A full-stack web application built with Python Flask, connected to the elections database. 
+    The app exposes electoral data through dynamic routes, uses Jinja2 HTML templates for rendering, 
+    and includes the <code>UK2019ElectionCalc.py</code> script for complex electoral seat calculations.
+  </p>
+
+  <div class="grid-boxes" style="margin-top:20px;">
+
+    <div class="box warm-bg">
+      <h3>app.py</h3>
+      <p>Main Flask application — defines routes, database queries, and view logic for the UK Elections web interface.</p>
+      <a href="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/SQL Dump/Website UK Elections/UKElection/app.py"
+         download="app.py"
+         class="cta-button" style="margin-top:15px;">
+        Download app.py →
+      </a>
+    </div>
+
+    <div class="box warm-bg-light">
+      <h3>models.py</h3>
+      <p>Database models defining the schema used by the Flask app, mapping Python objects to relational tables.</p>
+      <a href="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/SQL Dump/Website UK Elections/models.py"
+         download="models.py"
+         class="cta-button" style="margin-top:15px;">
+        Download models.py →
+      </a>
+    </div>
+
+    <div class="box warm-bg-dark">
+      <h3>UK2019ElectionCalc.py</h3>
+      <p>A 41KB calculation script implementing complex UK 2019 General Election seat and vote share logic.</p>
+      <a href="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/SQL Dump/Website UK Elections/UKElection/UK2019ElectionCalc.py"
+         download="UK2019ElectionCalc.py"
+         class="cta-button" style="margin-top:15px;">
+        Download Calc Script →
+      </a>
+    </div>
+
+  </div>
+
+  <div class="box warm-bg-light" style="padding:30px; text-align:center; margin-top:30px;">
+    <p>Download the full Flask project as a ZIP — includes app source, models, templates, and election calculation scripts.</p>
+    <a href="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Flask-UK-Elections-Project.zip"
+       download="Flask-UK-Elections-Project.zip"
+       class="cta-button" style="margin-top:15px;">
+      Download Full Flask Project (ZIP) →
+    </a>
+  </div>
+</section>
+
+<!-- TECHNICAL BREAKDOWN -->
+<section class="fade-in">
+  <h2>Technical Breakdown</h2>
+  <ul>
+    <li>ERD Design &amp; Annotation — entity modelling, relationship mapping, normalisation</li>
+    <li>SQL Implementation — schema creation, data population via SQL dump files</li>
+    <li>UK 2019 Electoral Calculations — seat allocation, vote share, threshold logic</li>
+    <li>Flask Web Application — route design, database queries, Jinja2 templating</li>
+    <li>Database-Backed Web Interface — dynamic data rendering from relational database</li>
+    <li>Academic Documentation — full written report with design rationale and evaluation</li>
+  </ul>
+</section>
+
+<!-- SCREENSHOTS -->
+<section class="fade-in">
+  <h2>Project Screenshots</h2>
+
+  <!-- SQL Database Screenshots -->
+  <h3 style="margin-top:30px; margin-bottom:15px;">SQL Database</h3>
+  <div class="grid-boxes">
+
+    <div class="box warm-bg">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/SQL-Database/1-Importing-Data-from-excel-to-database.PNG" alt="Importing Data from Excel to Database" style="width:100%; border-radius:10px;">
+      <p>1. Importing Data from Excel to Database</p>
+    </div>
+
+    <div class="box warm-bg-light">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/SQL-Database/2-Selecting-presidental-election-data.PNG" alt="Selecting Presidential Election Data" style="width:100%; border-radius:10px;">
+      <p>2. Selecting Presidential Election Data</p>
+    </div>
+
+    <div class="box warm-bg-dark">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/SQL-Database/3-Set-destination-of-copy-excel-to-database.PNG" alt="Set Destination of Copy Excel to Database" style="width:100%; border-radius:10px;">
+      <p>3. Set Destination of Copy Excel to Database</p>
+    </div>
+
+    <div class="box warm-bg">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/SQL-Database/4-Selecting-source-table-and-views.PNG" alt="Selecting Source Table and Views" style="width:100%; border-radius:10px;">
+      <p>4. Selecting Source Table and Views</p>
+    </div>
+
+    <div class="box warm-bg-light">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/SQL-Database/5-Run-and-save-as-SSIS-package-and-encrypt-sensitive-data.PNG" alt="Run and Save as SSIS Package" style="width:100%; border-radius:10px;">
+      <p>5. Run and Save as SSIS Package &amp; Encrypt Sensitive Data</p>
+    </div>
+
+    <div class="box warm-bg-dark">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/SQL-Database/6-Saving-SSIS-package-using-Win-Auth.PNG" alt="Saving SSIS Package using Windows Auth" style="width:100%; border-radius:10px;">
+      <p>6. Saving SSIS Package using Windows Authentication</p>
+    </div>
+
+    <div class="box warm-bg">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/SQL-Database/7-Success-table-and-data-implemented.PNG" alt="Success Table and Data Implemented" style="width:100%; border-radius:10px;">
+      <p>7. Success — Table and Data Implemented</p>
+    </div>
+
+    <div class="box warm-bg-light">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/SQL-Database/8-Generating-SQL-Creation-scripts-and-insert-scripts.PNG" alt="Generating SQL Creation Scripts" style="width:100%; border-radius:10px;">
+      <p>8. Generating SQL Creation Scripts and Insert Scripts</p>
+    </div>
+
+    <div class="box warm-bg-dark">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/SQL-Database/8-5-script-generated.PNG" alt="Script Generated" style="width:100%; border-radius:10px;">
+      <p>8.5. Script Generated</p>
+    </div>
+
+    <div class="box warm-bg">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/SQL-Database/9-Connecting-database-to-VSCode.PNG" alt="Connecting Database to VSCode" style="width:100%; border-radius:10px;">
+      <p>9. Connecting Database to VSCode</p>
+    </div>
+
+    <div class="box warm-bg-light">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/SQL-Database/9-4.PNG" alt="Step 9.4" style="width:100%; border-radius:10px;">
+      <p>9.4. Database Connection Progress</p>
+    </div>
+
+    <div class="box warm-bg-dark">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/SQL-Database/9-5-Second-attempt-to-connect-to-VS-Code.PNG" alt="Second Attempt to Connect to VSCode" style="width:100%; border-radius:10px;">
+      <p>9.5. Second Attempt to Connect to VSCode</p>
+    </div>
+
+    <div class="box warm-bg">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/SQL-Database/9-6-SQL-integrate-setting.PNG" alt="SQL Integrate Setting" style="width:100%; border-radius:10px;">
+      <p>9.6. SQL Integrate Setting</p>
+    </div>
+
+    <div class="box warm-bg-light">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/SQL-Database/10-Had-to-redownload-SQL-server-dev-as-express.PNG" alt="Redownload SQL Server" style="width:100%; border-radius:10px;">
+      <p>10. Had to Redownload SQL Server Dev as Express</p>
+    </div>
+
+    <div class="box warm-bg-dark">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/SQL-Database/11-Connected-SQL-server-to-VSCode.PNG" alt="Connected SQL Server to VSCode" style="width:100%; border-radius:10px;">
+      <p>11. Connected SQL Server to VSCode</p>
+    </div>
+
+    <div class="box warm-bg">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/SQL-Database/12-Installing-XAMPP-for-Apache-and-myPHPAdmin.PNG" alt="Installing XAMPP" style="width:100%; border-radius:10px;">
+      <p>12. Installing XAMPP for Apache and phpMyAdmin</p>
+    </div>
+
+    <div class="box warm-bg-light">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/SQL-Database/12-Setting-random-cookie-string-so-phpMyAdmin.PNG" alt="Setting phpMyAdmin Cookie" style="width:100%; border-radius:10px;">
+      <p>12. Setting Random Cookie String for phpMyAdmin</p>
+    </div>
+
+    <div class="box warm-bg-dark">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/SQL-Database/13-Running-apache-and-phpadmin-through-X.PNG" alt="Running Apache and phpAdmin" style="width:100%; border-radius:10px;">
+      <p>13. Running Apache and phpMyAdmin through XAMPP</p>
+    </div>
+
+    <div class="box warm-bg">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/SQL-Database/14-1-Reconfiguring-Excel-sheet.PNG" alt="Reconfiguring Excel Sheet" style="width:100%; border-radius:10px;">
+      <p>14.1. Reconfiguring Excel Sheet</p>
+    </div>
+
+    <div class="box warm-bg-light">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/SQL-Database/14-2-Pivot-table-made-to-fit-into-database-format.PNG" alt="Pivot Table for Database Format" style="width:100%; border-radius:10px;">
+      <p>14.2. Pivot Table Made to Fit Database Format with Full Sum</p>
+    </div>
+
+    <div class="box warm-bg-dark">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/SQL-Database/14-3-Made-Regions-work-on-a-database.PNG" alt="Regions Working on Database" style="width:100%; border-radius:10px;">
+      <p>14.3. Made Regions Work on Database to Use Each Field</p>
+    </div>
+
+    <div class="box warm-bg">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/SQL-Database/15-Adding-pivot-table-to-SQLdatabase.PNG" alt="Adding Pivot Table to SQL Database" style="width:100%; border-radius:10px;">
+      <p>15. Adding Pivot Table to SQL Database</p>
+    </div>
+
+    <div class="box warm-bg-light">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/SQL-Database/16-Imported-it-to-PHP-admin.PNG" alt="Imported to PHP Admin" style="width:100%; border-radius:10px;">
+      <p>16. Imported to PHP Admin</p>
+    </div>
+
+    <div class="box warm-bg-dark">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/SQL-Database/17-Installing-Node-JS-and-Python.PNG" alt="Installing Node JS and Python" style="width:100%; border-radius:10px;">
+      <p>17. Installing Node.js and Python</p>
+    </div>
+
+  </div>
+
+  <!-- Website Screenshots -->
+  <h3 style="margin-top:50px; margin-bottom:15px;">Flask Web Application</h3>
+  <div class="grid-boxes">
+
+    <div class="box warm-bg">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/Website/1-Creating-Web-Application-Project.PNG" alt="Creating Web Application Project" style="width:100%; border-radius:10px;">
+      <p>1. Creating Web Application Project</p>
+    </div>
+
+    <div class="box warm-bg-light">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/Website/2-In-Startup-enable-cors.PNG" alt="Enable CORS in Startup.cs" style="width:100%; border-radius:10px;">
+      <p>2. Enabling CORS in Startup.cs</p>
+    </div>
+
+    <div class="box warm-bg-dark">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/Website/3-Needed-to-install-NuGet-package.PNG" alt="Installing NuGet Package" style="width:100%; border-radius:10px;">
+      <p>3. Installing NuGet Package for JSON Serialisation</p>
+    </div>
+
+    <div class="box warm-bg">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/Website/3-5-Needed-to-install-version-3-1-0.PNG" alt="Install Version 3.1.0" style="width:100%; border-radius:10px;">
+      <p>3.5. Installing Version 3.1.0</p>
+    </div>
+
+    <div class="box warm-bg-light">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/Website/3-6-Newton-package-installed.PNG" alt="Newton Package Installed" style="width:100%; border-radius:10px;">
+      <p>3.6. Newton Package Installed</p>
+    </div>
+
+    <div class="box warm-bg-dark">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/Website/4-Connecting-Database-with-Election-Data-to-Web-Application.PNG" alt="Connecting Database to Web Application" style="width:100%; border-radius:10px;">
+      <p>4. Connecting Database with Election Data to Web Application</p>
+    </div>
+
+    <div class="box warm-bg">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/Website/5-Testing-to-see-if-C-Sharp-Web-App-template-compiles.PNG" alt="Testing C# Web App Template" style="width:100%; border-radius:10px;">
+      <p>5. Testing C# Web App Template Compiles and Loads</p>
+    </div>
+
+    <div class="box warm-bg-light">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/Website/6-Setting-up-class-to-import-data-from-database.PNG" alt="Setting Up Class to Import Data" style="width:100%; border-radius:10px;">
+      <p>6. Setting Up Class to Import Data from Database</p>
+    </div>
+
+    <div class="box warm-bg-dark">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/Website/6-1-Setting-default-connection-to-SQL-database.PNG" alt="Setting Default SQL Connection" style="width:100%; border-radius:10px;">
+      <p>6.1. Setting Default Connection to SQL Database</p>
+    </div>
+
+    <div class="box warm-bg">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/Website/6-2-Installing-Entity-Framework.PNG" alt="Installing Entity Framework" style="width:100%; border-radius:10px;">
+      <p>6.2. Installing Entity Framework</p>
+    </div>
+
+    <div class="box warm-bg-light">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/Website/6-3-Installing-database-reverse-engineering-tool.PNG" alt="Installing DB Reverse Engineering Tool" style="width:100%; border-radius:10px;">
+      <p>6.3. Installing Database Reverse Engineering Tool</p>
+    </div>
+
+    <div class="box warm-bg-dark">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/Website/6-4-Installing-all-necessary-EntityFrameworks.PNG" alt="Installing Entity Frameworks" style="width:100%; border-radius:10px;">
+      <p>6.4. Installing All Necessary Entity Frameworks</p>
+    </div>
+
+    <div class="box warm-bg">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/Website/6-5-Tool-framework.PNG" alt="Tool Framework" style="width:100%; border-radius:10px;">
+      <p>6.5. Tool Framework</p>
+    </div>
+
+    <div class="box warm-bg-light">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/Website/6-6-Now-all-Entity-Frameworks-are-installed-run-script.PNG" alt="All Entity Frameworks Installed" style="width:100%; border-radius:10px;">
+      <p>6.6. All Entity Frameworks Installed — Running Script</p>
+    </div>
+
+    <div class="box warm-bg-dark">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/Website/6-7-Instance-failure.PNG" alt="Instance Failure" style="width:100%; border-radius:10px;">
+      <p>6.7. Instance Failure</p>
+    </div>
+
+    <div class="box warm-bg">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/Website/6-8-Using-Server-Explorer-to-connect-SQL-database.PNG" alt="Using Server Explorer" style="width:100%; border-radius:10px;">
+      <p>6.8. Using Server Explorer to Connect SQL Database</p>
+    </div>
+
+    <div class="box warm-bg-light">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/Website/6-9-SQL-Connection-success.PNG" alt="SQL Connection Success" style="width:100%; border-radius:10px;">
+      <p>6.9. SQL Connection Success</p>
+    </div>
+
+    <div class="box warm-bg-dark">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/Website/6-10-Now-all-Entity-Frameworks-installed-run-script.PNG" alt="Entity Frameworks Installed" style="width:100%; border-radius:10px;">
+      <p>6.10. All Entity Frameworks Installed — Running Script</p>
+    </div>
+
+    <div class="box warm-bg">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/Website/6-11-SQL-express-add-database-file.PNG" alt="SQL Express Database Addition" style="width:100%; border-radius:10px;">
+      <p>6.11. Adding Database File for SQL Express</p>
+    </div>
+
+    <div class="box warm-bg-light">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/Website/6-12-Had-to-restart-the-server-to-add-the-database-file.PNG" alt="Restart Server to Add Database" style="width:100%; border-radius:10px;">
+      <p>6.12. Restarted Server to Add Database File</p>
+    </div>
+
+    <div class="box warm-bg-dark">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/Website/6-13-Error-message-showing-downgrade-needed.PNG" alt="Error Message Downgrade" style="width:100%; border-radius:10px;">
+      <p>6.13. Error Message — Downgrade Required</p>
+    </div>
+
+    <div class="box warm-bg">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/Website/6-14-Selected-other-database-and-manually-entered-details.PNG" alt="Manually Entered Database" style="width:100%; border-radius:10px;">
+      <p>6.14. Selected Other Database and Manually Entered Details</p>
+    </div>
+
+    <div class="box warm-bg-light">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/Website/6-15-Connection-Successful.PNG" alt="Connection Successful" style="width:100%; border-radius:10px;">
+      <p>6.15. Connection Successful</p>
+    </div>
+
+    <div class="box warm-bg-dark">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/Website/6-16-Database-loaded-into-VS.PNG" alt="Database Loaded into VS" style="width:100%; border-radius:10px;">
+      <p>6.16. Database Loaded into Visual Studio</p>
+    </div>
+
+    <div class="box warm-bg">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/Website/6-17-All-Entity-Frameworks-installed-run-script.PNG" alt="Frameworks Installed Run Script" style="width:100%; border-radius:10px;">
+      <p>6.17. All Entity Frameworks Installed — Run Script</p>
+    </div>
+
+    <div class="box warm-bg-light">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/Website/6-18-Database-models-all-set-up-into-VS-web-app.PNG" alt="Database Models Set Up" style="width:100%; border-radius:10px;">
+      <p>6.18. Database Models All Set Up in VS Web App</p>
+    </div>
+
+    <div class="box warm-bg-dark">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/Website/6-19-Setting-up-connection-to-database-in-VS-startup-file.PNG" alt="Connection to Database in Startup" style="width:100%; border-radius:10px;">
+      <p>6.19. Setting Up Connection to Database in VS Startup File</p>
+    </div>
+
+    <div class="box warm-bg">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/Website/7-Creating-2000-2020-class-interface-to-test-data.PNG" alt="Creating 2000-2020 Class Interface" style="width:100%; border-radius:10px;">
+      <p>7. Creating 2000–2020 Class Interface to Test Data Display</p>
+    </div>
+
+    <div class="box warm-bg-light">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/Website/7-1-Adding-both-normal-and-SQL-class-interfaces.PNG" alt="Adding Normal and SQL Class Interfaces" style="width:100%; border-radius:10px;">
+      <p>7.1. Adding Both Normal and SQL Class Interfaces</p>
+    </div>
+
+    <div class="box warm-bg-dark">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/Website/8-Need-to-redo-all-steps-and-move.PNG" alt="Redo Steps" style="width:100%; border-radius:10px;">
+      <p>8. Need to Redo All Steps and Move Forward</p>
+    </div>
+
+    <div class="box warm-bg">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/Website/8-1-GUI-not-showing-NET-Core-Web.PNG" alt="GUI Not Showing NET Core Web" style="width:100%; border-radius:10px;">
+      <p>8.1. GUI Not Showing .NET Core Web</p>
+    </div>
+
+    <div class="box warm-bg-light">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/Website/8-2-Installing-InMemory-EntityFramework.PNG" alt="Installing InMemory EntityFramework" style="width:100%; border-radius:10px;">
+      <p>8.2. Installing InMemory Entity Framework</p>
+    </div>
+
+    <div class="box warm-bg-dark">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/Website/8-3-Website-up-and-running.PNG" alt="Website Up and Running" style="width:100%; border-radius:10px;">
+      <p>8.3. Website Up and Running</p>
+    </div>
+
+    <div class="box warm-bg">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/Website/8-4-Throwing-null-error.PNG" alt="Throwing Null Error" style="width:100%; border-radius:10px;">
+      <p>8.4. Throwing Null Error</p>
+    </div>
+
+    <div class="box warm-bg-light">
+      <img src="../../../../Assets/Cyber Sec Uni Work/2nd Year/Databases/Images-for-Database-work/Website/8-5-Created-dynamic-table-headings.PNG" alt="Dynamic Table Headings Created" style="width:100%; border-radius:10px;">
+      <p>8.5. Created Dynamic Table Headings</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- BACK BUTTON -->
+<section style="text-align:center; margin:60px 0;">
+  <a href="../../../../university-projects.html" class="cta-button">← Back to University Work</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="fade-in">
+  <div class="footer-content">
+    <p>&copy; 2026 Archie Cook &nbsp;&middot;&nbsp; <a href="../../../../privacy.html">Privacy</a> &nbsp;&middot;&nbsp; <a href="../../../../terms.html">Terms</a></p>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/archie-cook-56431b170/" target="_blank" rel="noopener noreferrer">
+        <img src="../../../../Assets/Icons/linkedin.svg" alt="LinkedIn">
+      </a>
+      <a href="https://github.com/ArchyCo?tab=repositories" target="_blank" rel="noopener noreferrer">
+        <img src="../../../../Assets/Icons/github.svg" alt="GitHub">
+      </a>
+      <a href="https://x.com/acookie69420" target="_blank" rel="noopener noreferrer">
+        <img src="../../../../Assets/Icons/x.svg" alt="X">
+      </a>
+      <a href="https://www.facebook.com/archie.cook.520/" target="_blank" rel="noopener noreferrer">
+        <img src="../../../../Assets/Icons/facebook.svg" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/archiecoook/" target="_blank" rel="noopener noreferrer">
+        <img src="../../../../Assets/Icons/instagram.svg" alt="Instagram">
+      </a>
+      <a href="https://www.tiktok.com/@cookieajwc" target="_blank" rel="noopener noreferrer">
+        <img src="../../../../Assets/Icons/tiktok.svg" alt="TikTok">
+      </a>
+      <a href="https://www.youtube.com/@archy8488" target="_blank" rel="noopener noreferrer">
+        <img src="../../../../Assets/Icons/youtube.svg" alt="YouTube">
+      </a>
+      <a href="mailto:archiecook7878@gmail.com">
+        <img src="../../../../Assets/Icons/email.svg" alt="Email">
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="../../../../site.js" defer></script>
+
+</body>
+</html>

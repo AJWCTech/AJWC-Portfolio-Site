@@ -1,0 +1,148 @@
+# ===================================================================
+# Archie Cook portfolio - Apache config for Fasthosts
+# If the site 500s after uploading this, rename it to .htaccess-off
+# and add the blocks back one at a time to find the unsupported one.
+# ===================================================================
+
+# --- Stop directory browsing -----------------------------------------
+# Without this, anyone can open /Assets/Cyber Sec Uni Work/ and read a
+# full listing of every file, including ones no page links to.
+Options -Indexes
+
+# --- Security headers -------------------------------------------------
+<IfModule mod_headers.c>
+    # Don't let browsers guess a file is a different type than it says
+    Header always set X-Content-Type-Options "nosniff"
+
+    # Stop other sites embedding this one in a frame (clickjacking)
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+    # Don't leak the full URL you came from when following outbound links
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Turn off browser features this site never uses
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=()"
+
+    # Content Security Policy.
+    # script-src is 'self' with NO 'unsafe-inline' - all behaviour lives in
+    # site.js, so an injected <script> tag simply will not execute. This is
+    # the setting that actually stops reflected/stored XSS.
+    # style-src keeps 'unsafe-inline' because some layout tweaks are inline
+    # style="" attributes; those cannot execute code, so the risk is minor.
+    # frame-src allows the Google Docs viewer used by the CV page on mobile.
+    Header always set Content-Security-Policy "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; font-src 'self'; frame-src https://docs.google.com; form-action 'self'; frame-ancestors 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests"
+
+    # Don't advertise the PHP version to fingerprinting tools
+    Header always unset X-Powered-By
+
+    # HSTS - tell browsers to only ever reach this site over HTTPS, so a
+    # visitor who types the bare domain on a hostile network cannot be
+    # downgraded to http and intercepted.
+    # *** ONLY UNCOMMENT AFTER the HTTPS redirect below is switched on and
+    # https:// is confirmed working - a browser that sees this header will
+    # REFUSE plain http for a year and you cannot take that back quickly. ***
+    # Start with a short max-age (300 = 5 minutes) for a day, then raise it.
+    # Header always set Strict-Transport-Security "max-age=300"
+    # Once you are confident, replace the line above with:
+    # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+
+    # Stop other origins probing this site through a popup handle, and stop
+    # them hotlinking assets into their own pages.
+    Header always set Cross-Origin-Opener-Policy "same-origin"
+    Header always set Cross-Origin-Resource-Policy "same-origin"
+</IfModule>
+
+# Hide the Apache version string in error pages
+ServerSignature Off
+
+# --- Block access to file types that should never be fetched ----------
+<FilesMatch "\.(bak|old|swp|tmp|log|ini|cfg|env|pyc|dist|sql~)$">
+    Require all denied
+</FilesMatch>
+
+# Hidden files (.htaccess itself, .env and friends).
+# NOTE: FilesMatch tests the FILENAME only, so this alone does NOT protect
+# a hidden DIRECTORY - a request for /.git/config has the filename "config",
+# which does not start with a dot and would sail straight through. The
+# path-based rule below is the one that actually protects those.
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+# --- Block hidden/developer directories by PATH -----------------------
+# If .git, .claude or similar ever reach the server by accident, this stops
+# them being read. An exposed .git lets anyone reconstruct the entire source
+# history (a well-known, heavily-scanned-for exposure), so this is defence in
+# depth behind "don't upload them in the first place".
+# .well-known is explicitly re-allowed: security.txt has to stay reachable.
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^\.well-known/ - [L]
+    RewriteRule (^|/)\.(git|claude|hg|svn|bzr|idea|vscode|superpowers|agents)(/|$) - [F,L]
+    RewriteRule (^|/)\.gitignore$ - [F,L]
+</IfModule>
+
+# Belt and braces for servers where mod_rewrite is unavailable.
+<IfModule mod_alias.c>
+    RedirectMatch 404 (?i)(^|/)\.(git|claude|hg|svn|bzr|idea|vscode|superpowers|agents)(/|$)
+</IfModule>
+
+# Source/config files that must never be served if one slips through
+<FilesMatch "\.(md|json|lock|yml|yaml|toml|py|sh|ps1)$">
+    Require all denied
+</FilesMatch>
+
+# --- Force HTTPS ------------------------------------------------------
+# Only enable once you have confirmed https://ajwctechconsulting.com
+# loads correctly, otherwise you can lock yourself out of the site.
+# Remove the # from the four lines below to turn it on.
+#
+# <IfModule mod_rewrite.c>
+#     RewriteEngine On
+#     RewriteCond %{HTTPS} !=on
+#     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+# </IfModule>
+
+# --- Default page and errors ------------------------------------------
+DirectoryIndex index.html index.php
+ErrorDocument 404 /404.html
+
+# --- Hotlink protection for the large videos --------------------------
+# The two coursework videos are ~640 MB between them. This stops other
+# sites embedding them and billing the bandwidth to your hosting account.
+# A blank referer is allowed so direct links and downloads still work.
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTP_REFERER} !^$
+    RewriteCond %{HTTP_REFERER} !ajwctechconsulting\.com [NC]
+    RewriteRule \.(mp4|mov|avi)$ - [F,NC,L]
+</IfModule>
+
+# --- Compression and caching -----------------------------------------
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/plain application/javascript application/json image/svg+xml
+</IfModule>
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css                "access plus 7 days"
+    # Your own JS changes when you edit it, so keep it short - otherwise a
+    # returning visitor keeps running last month's site.js.
+    ExpiresByType application/javascript  "access plus 1 day"
+    ExpiresByType text/javascript         "access plus 1 day"
+    ExpiresByType font/woff2              "access plus 1 year"
+    ExpiresByType image/png               "access plus 30 days"
+    ExpiresByType image/jpeg              "access plus 30 days"
+    ExpiresByType image/svg+xml           "access plus 30 days"
+    ExpiresByType application/pdf         "access plus 1 day"
+    ExpiresByType text/html               "access plus 0 seconds"
+</IfModule>
+
+# The vendored libraries (GSAP, anime.js, Three.js, Motion) are ~1.1 MB and
+# only change when deliberately re-vendored, so they get the long cache the
+# short site-wide JS rule above deliberately withholds.
+<IfModule mod_headers.c>
+    <FilesMatch "^(gsap\.min|ScrollTrigger\.min|anime\.umd\.min|three\.module\.min|three\.core\.min|motion)\.js$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+</IfModule>
